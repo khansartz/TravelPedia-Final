@@ -1,0 +1,215 @@
+/* Dibuat oleh Aliyah dan Puspa */
+/* kode css untuk tampilan website Blog */
+
+  /* CSS styles */
+  h3, p {
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 60px;
+  }
+
+  .ringkasan {
+    font-size: 20px;
+  }
+
+  .ringkasan:hover {
+    color: #2600ff;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+  }
+
+  .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+  .gallery-item img {
+    width: 100%;
+    height: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .gallery-item img:hover {
+    transform: scale(1.05);
+  }
+
+  .gallery-item .text {
+    padding: 15px;
+    text-align: justify;
+  }
+
+  .view-more-btn {
+    background-color: rgb(83, 45, 9);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .view-more-btn:hover {
+    background-color: rgb(57, 3, 138);
+  }
+
+  /* Popup Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .popup-content {
+    display: flex;
+    flex-direction: column; /* Mengubah menjadi column agar vertikal */
+    align-items: center; /* Pusatkan vertikal */
+  }
+
+  .popup-content img {
+    width: 70%; /* Ubah sesuai kebutuhan */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Jarak antara gambar dan teks */
+  }
+
+  .popup-content h4 {
+    text-align: center; /* Pusatkan judul */
+    margin-bottom: 10px;
+  }
+
+  .popup-content p {
+    text-align: justify; /* Justifikasi teks */
+  }
+
+  .close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    cursor: pointer;
+  }
+
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+  }
+
+  /* Style untuk Sort by */
+  .sort-btn {
+    text-align: center;
+    margin-top: 60px; /* Ubah margin agar tidak terlalu jauh dari ringkasan */
+    margin-bottom: 30px;
+  }
+
+  .sort-btn ion-icon {
+    vertical-align: middle; /* Menyesuaikan posisi ikon agar sejajar dengan teks */
+    margin-right: 5px; /* Menambahkan margin kanan agar terdapat ruang di antara ikon dan teks */
+    font-size: 30px;
+  }
+
+  .sort-btn button {
+    background-color: #693c12;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 23px; /* Ubah ukuran font menjadi lebih kecil */
+    font-weight: bold;
+    padding: 10px 20px; /* Sesuaikan padding untuk membuat tombol lebih kecil */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    vertical-align: middle;
+  }
+
+  .sort-btn button:hover {
+    background-color: rgb(57, 3, 138);
+  }
+/* CSS untuk tombol filter */
+.filter-btn {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-btn button {
+  background-color: #693c12;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.filter-btn button:hover {
+  background-color: rgb(57, 3, 138);
+}
+
+.filter-btn button ion-icon {
+  margin-right: 5px;
+}
+  /* Style untuk sort-options */
+  .sort-options {
+    margin-top: 10px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: center; /* Untuk mengatur ke tengah secara horizontal */
+    left: 50%; /* Menengahkan secara horizontal */
+    border-radius: 0;
+    transform: translateX(-50%); /* Koreksi agar posisi benar di tengah */
+  }
+
+  .sort-options button {
+    width: 100%;
+    padding: 10px;
+    text-align: left; /* Untuk mengatur ke tengah secara horizontal */
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: black; /* Mengatur warna teks menjadi hitam */
+    font-size: 16px;
+    border-radius: 0;
+  }
+
+  .sort-options button:hover {
+    background-color: #ddd;
+    border-radius: 0;
+  }

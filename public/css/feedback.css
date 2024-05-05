@@ -1,0 +1,128 @@
+  /* Dibuat oleh Aliyah */
+  /* kode css untuk tampilan website Feedback */
+
+
+ /* Style untuk video */
+ .intro {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .intro video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video akan diubah ukurannya agar sesuai dengan ukuran header */
+  }
+
+  /* Style untuk comment */
+  .bubble {
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 10px 0;
+  }
+
+  .comment {
+    font-weight: bold;
+  }
+
+  .container {
+    margin-top: 50px;
+    text-align: left; /* Mengubah posisi teks di dalam container menjadi tengah */
+  }
+
+  .button {
+    text-align: center;
+  }
+
+  /* Style untuk tombol Add Comment */
+  .add-comment {
+    margin-top: 30px;
+    background-color: #b11f1f;
+    color: white;
+    padding: 8px 8px; /* Memperbesar padding untuk membuat tombol lebih besar */
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* Memperbesar border-radius untuk membuat tombol lebih melengkung */
+    font-size: 16px; /* Memperbesar ukuran font tombol */
+    font-weight: bold;
+    display: inline-block; /* Agar tombol tidak memenuhi lebar penuh container */
+  }
+
+  .add-comment:hover {
+    background-color: #c60000;
+  }
+
+  .add-comment ion-icon {
+    vertical-align: middle; /* Menyesuaikan posisi ikon agar sejajar dengan teks */
+    margin-right: 5px; /* Menambahkan margin kanan agar terdapat ruang di antara ikon dan teks */
+  }
+
+  /* Style untuk form input Comment */
+  .comment-form {
+    margin-top: 20px;
+    display: none; /* Form input akan disembunyikan secara default */
+  }
+
+  .comment-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  .comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  .comment-form button {
+    background-color: #5e3a19; /* Warna biru tua */
+    color: white; /* Warna teks putih */
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 7px 7px;
+    font-family: Poppins, sans-serif;
+  }
+
+  .comment-form button:hover {
+    background-color: #1500ff; /* Warna biru tua yang sedikit lebih gelap saat hover */
+  }
+
+  /* Style untuk tombol Edit */
+  .edit-button {
+    background-color: #28a745; /* Warna hijau */
+    color: white; /* Warna teks putih */
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 5px 10px; /* Sesuaikan padding jika diperlukan */
+    margin-right: 5px; /* Sesuaikan margin jika diperlukan */
+  }
+
+  /* Style untuk tombol Delete */
+  .delete-button {
+    background-color: #dc3545; /* Warna merah */
+    color: white; /* Warna teks putih */
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 5px 10px; /* Sesuaikan padding jika diperlukan */
+    margin-left: 5px; /* Sesuaikan margin jika diperlukan */
+  }
+
+  h2 {
+    text-align: center;
+  }

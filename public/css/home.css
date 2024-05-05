@@ -1,0 +1,235 @@
+ /* Dibuat oleh Aliyah */
+ /* kode css untuk tampilan website Home */
+
+  /* Style untuk video */
+  .page {
+      position: relative;
+      width: 100%;
+      height: 100vh; 
+      overflow: hidden;
+  }
+
+  .page video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Video akan diubah ukurannya agar sesuai dengan ukuran header */
+      z-index: -1;
+  }
+
+  /* Style untuk intro */
+  .intro {
+      z-index: 100;
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 600px; /* Membatasi lebar maksimum dari intro */
+  }
+
+  .intro h3 {
+      font-size: 50px;
+      margin: 0;
+      padding: 0;
+      margin-top: 80px; /* Ubah margin-top ke 200px */
+  }
+
+  .intro h3:hover {
+      color: #e21b53;
+  }
+
+  .intro p:hover {
+      color: #ff0000;
+  }
+
+  /* Style untuk tombol */
+  .tombol {
+      background-color: #c86b85;
+      height: 40px;
+      line-height: 42px;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0px 20px 0px 20px;
+      font-size: 15px;
+      border-radius: 4px;
+  }
+
+  .tombol:hover {
+      background-color: #75263c;
+  }
+
+  /* Style untuk section */
+  section {
+      padding: 50px 0px; /* Ubah padding di sini sesuai kebutuhan */
+  }
+
+  section h3 {
+      font-size: 30px;
+  }
+
+  section h3::after {
+      content: "";
+      border-bottom: 5px solid #6b370c;
+      width: 52px;
+      display: block;
+      margin: 20px auto;
+  }
+
+  #aboutus {
+      text-align: center;
+  }
+
+  section p.ringkasan:hover {
+      color: #ff0044;
+  }
+
+  section p.ringkasan {
+      font-style: italic;
+      font-size: 18px;
+      color: #ababab;
+  }
+
+  section .konten-isi p {
+      font-style: normal;
+  }
+
+  section.abuabu {
+      background-color: #f5f6f6;
+  }
+
+  /* Style untuk footer */
+  footer {
+      padding: 50px 0px;
+      color: #000000;
+  }
+
+  footer .layar-dalam {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  footer .layar-dalam div {
+      width: 20%;
+  }
+
+  footer .layar-dalam h5 {
+      margin-top: 0px;
+      font-size: 20px;
+      font-weight: bold;
+  }
+
+  .contact ul li a,
+  .sitemap p a {
+      color: #000000;
+      text-decoration: none;
+      transition: color 0.5s ease;
+  }
+
+  .contact ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  .contact ul li {
+      margin-bottom: 5px;
+  }
+
+  .contact ul li a:hover {
+      color: rgb(253, 20, 97);
+  }
+
+  footer .layar-dalam div.info:hover p {
+      color: rgb(227, 82, 4);
+  }
+
+  footer .layar-dalam div.help:hover p {
+      color: rgb(227, 82, 4);
+  }
+
+  footer .layar-dalam div.sitemap:hover p a {
+      color: rgb(224, 3, 3);
+  }
+
+
+  #team .layar-dalam {
+    width: 1000px;
+    margin: auto;
+  }
+
+  #team h3 {
+    color: #000000;
+    font-size: 30px;
+  }
+
+  #team h3::after {
+    content: "";
+    border-bottom: 5px solid #75263c;
+    width: 52px;
+    display: block;
+    margin: 20px auto;
+  }
+
+  #team{
+    text-align: center;
+    margin: 0; /* Menengahkan elemen team */
+    padding: 0;
+    background-image: url("img/pantai2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 700px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #team p.ringkasan {
+    font-style: italic;
+    font-size: 20px;
+    color: #000000;
+  }
+
+  #team p.ringkasan:hover {
+    color: #75263c;
+  }
+
+  #team .konten-isi p {
+    font-style: normal;
+  }
+
+  .tim {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1000px; /* Mengatur lebar konten tim */
+    margin: 0 auto; /* Menengahkan konten tim */
+  }
+ 
+  .tim h6 {
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .tim div {
+    text-align: center;
+    justify-content: center;
+    width: 26%; /* Mengatur lebar tiap anggota tim */
+  }
+
+  .tim img {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px -10px 30px #ccc;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+  }

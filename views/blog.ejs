@@ -1,0 +1,118 @@
+<!-- Dikerjakan oleh Puspa, Aliyah (bagian sort), dan Nafisya (bagian filter) -->
+
+<!-- Membuat tampilan website bagian Blog -->
+<style>
+
+</style>
+<link rel="stylesheet" href="css/blog.css">
+
+<section class="abuabu" id="blog">
+  <div class="layar-dalam">
+    <br><br>
+    <h3>TRAVELPEDIA BLOG</h3>
+    <p class="ringkasan">
+      "Explore, Discover, Share: Your Gateway to Adventure! 🌍✈️ Dive into a World of Tips, Tricks, and Recommendations
+      Tourist Destination Await!"
+    </p>
+    <!-- Bagian tombol Sort by -->
+    <div class="sort-btn">
+      <button id="sort-btn"><ion-icon name="funnel"></ion-icon> Sort by</button>
+      <div id="sort-options" class="sort-options">
+        <button id="sort-a-z">Judul (A to Z)</button>
+        <button id="sort-z-a">Judul (Z to A)</button>
+      </div>
+    </div>
+    <!-- Bagian tombol Filter by Lokasi -->
+    <div class="filter-btn">
+      <button id="filter-semua">Semua Kategori</button>
+      <button id="filter-pulau-jawa">Pulau Jawa</button>
+      <button id="filter-luar-pulau-jawa">Luar Pulau Jawa</button>
+    </div>
+
+    <br>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="/img/bali.jpg" alt="Bali" />
+        <div class="text">
+          <h4><a href="#">What About Bali?</a></h4>
+          <button class="view-more-btn" data-img="/img/bali.jpg" data-title="What About Bali?"
+            data-content="Bali, dikenal juga sebagai Kepulauan Bali atau Pulau Dewata adalah sebuah provinsi yang terletak di Indonesia. Ibu kotanya adalah Denpasar. Provinsi Bali terletak di bagian barat Kepulauan Nusa Tenggara.">View
+            More</button>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/jogja.jpg" alt="Yogyakarta" />
+        <div class="text">
+          <h4><a href="#">What About Yogyakarta?</a></h4>
+          <button class="view-more-btn" data-img="/img/jogja.jpg" data-title="What About Yogyakarta?"
+            data-content="Daerah Istimewa Yogyakarta, disingkat DIY atau DI Yogyakarta adalah daerah Istimewa setingkat provinsi di Indonesia yang merupakan peleburan dari Negara Kesultanan Yogyakarta dan Negara Kadipaten Paku Alaman. Daerah Istimewa Yogyakarta terletak di bagian selatan Pulau Jawa, dan berbatasan dengan Provinsi Jawa Tengah dan Samudra Hindia.">View
+            More</button>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/papua.jpg" alt="Papua" />
+        <div class="text">
+          <h4><a href="#">Discover Papua</a></h4>
+          <button class="view-more-btn" data-img="/img/papua.jpg" data-title="Discover Papua"
+            data-content="Papua, adalah provinsi yang terletak di pesisir utara Papua, Indonesia. Provinsi Papua sebelumnya bernama Irian Barat (1956 – 1973) dan Irian Jaya (1973 – 2000) yang mencakup seluruh Tanah Papua bekas Keresidenan Nugini Barat.">View
+            More</button>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/labuan bajo.jpg" alt="Labuan Bajo" />
+        <div class="text">
+          <h4><a href="#">Explore Labuan Bajo</a></h4>
+          <button class="view-more-btn" data-img="/img/labuan bajo.jpg" data-title="Explore Labuan Bajo"
+            data-content="Labuan Bajo merupakan salah satu kelurahan yang berada di Kecamatan Komodo, Kabupaten Manggarai Barat, Provinsi Nusa Tenggara Timur, Indonesia. Labuan Bajo juga merupakan pusat pemerintahan dari Kecamatan Komodo dan sekaligus merupakan ibu kota Kabupaten Manggarai Barat.">View
+            More</button>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/bandung.jpg" alt="Bandung" />
+        <div class="text">
+          <h4><a href="#">Attractions in Bandung</a></h4>
+          <button class="view-more-btn" data-img="/img/bandung.jpg" data-title="Attractions in Bandung"
+            data-content="Bandung merupakan bagian dari Cekungan Bandung (Bandung Raya), kawasan metropolitan terbesar ketiga di Indonesia setelah Jabodetabek dan Gerbangkertosusila. Kota Bandung berbatasan langsung dengan Cimahi dan Kabupaten Bandung Barat di sisi barat dan utara;Kabupaten Bandung di sisi timur dan selatan.">View
+            More</button>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/gunung lawu.jpg" alt="Gunung Lawu" />
+        <div class="text">
+          <h4><a href="#">Hiking Mount Lawu</a></h4>
+          <button class="view-more-btn" data-img="/img/gunung lawu.jpg" data-title="Hiking Mount Lawu"
+            data-content="Gunung Lawu  adalah sebuah gunung berapi aktif yang terletak di Pulau Jawa, tepatnya di perbatasan Jawa Tengah dan Jawa Timur, Indonesia. Gunung Lawu memiliki ketinggian sekitar 3.265 mdpl. Gunung Lawu terletak di antara tiga kabupaten, yaitu Karanganyar di Jawa Tengah, Ngawi, dan Magetan di Jawa Timur.">View
+            More</button>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/img/bromo.jpg" alt="Bromo" />
+        <div class="text">
+          <h4><a href="#">Visiting Mount Bromo</a></h4>
+          <button class="view-more-btn" data-img="/img/bromo.jpg" data-title="Visiting Mount Bromo"
+            data-content="Gunung Bromo atau dalam bahasa Tengger dieja 'Brama', juga disebut Kaldera Tengger, adalah sebuah gunung berapi aktif di Jawa Timur, Indonesia. Gunung ini memiliki ketinggian 2.329 meter di atas permukaan laut dan berada dalam empat wilayah kabupaten, yakni Kabupaten Probolinggo, Kabupaten Pasuruan, Kabupaten Lumajang, dan Kabupaten Malang. Gunung Bromo terkenal sebagai objek wisata utama di Jawa Timur.">View
+            More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Popup Modal -->
+<div id="popup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn"><ion-icon name="close-circle-sharp"></ion-icon></span>
+    <div class="popup-content">
+      <img id="popup-img" src="" alt="" />
+      <div id="popup-text" class="text">
+        <h4></h4>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="/js/blog.js"></script>

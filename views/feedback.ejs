@@ -1,0 +1,174 @@
+<!-- Dibuat oleh Aliyah -->
+<!-- Membuat tampilan website bagian Feedback Page -->
+
+<link rel="stylesheet" href="css/feedback.css">
+
+<h2>Let Us Know What You Think!</h2>
+<div class="layar-penuh"></div>
+<div class="intro">
+  <video autoplay muted loop>
+    <source src="img/bgvideo3.mp4" type="video/mp4" />
+  </video>
+</div>
+  <div class="container">
+    <div class="bubble">
+      <p class="comment">Aliyah</p>
+      <p>Pengalaman pengguna yang responsif membuat TravelPedia menjadi pilihan utama saya ketika mencari informasi tentang destinasi liburan.</p>
+  </div>
+  <div class="bubble">
+      <p class="comment">Khansa</p>
+      <p>Saya dengan mudah menemukan artikel inspiratif dan tips perjalanan yang berguna.</p>
+  </div>
+  <div class="bubble">
+      <p class="comment">Puspa</p>
+      <p>Saya suka bagaimana TravelPedia memberikan insight yang mendalam tentang destinasi.</p>
+  </div>
+  <div class="bubble">
+      <p class="comment">Nafisya</p>
+      <p>TravelPedia menjadi panduan lengkap bagi saya dalam merencanakan liburan yang tak terlupakan.</p>
+  </div>
+</div>
+  <div id="comments"></div>
+  <div class="button">
+    <button class="add-comment"><ion-icon name="chatbubbles-sharp" style="font-size: 30px"></ion-icon> Add Comment</button>
+    <!-- Memperbesar ukuran ikon -->
+    <form class="comment-form">
+      <input type="text" id="nama" placeholder="Nama Anda" />
+      <textarea id="komentar" rows="4" placeholder="Ketikkan komentar mu disini"></textarea>
+      <button type="button" onclick="addNewComment()">Submit</button>
+    </form>
+  </div>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+  async function fetchComments() {
+    try {
+      const response = await fetch("/comments");
+      const comments = await response.json();
+      displayComments(comments);
+    } catch (error) {
+      console.error("Error fetching comments:", error);
+    }
+  }
+
+  function displayComments(comments) {
+    const container = document.querySelector("#comments");
+
+    // Kosongkan container sebelum menampilkan komentar-komentar baru
+    container.innerHTML = "";
+
+    comments.forEach((comment) => {
+      // Buat elemen div untuk menampung komentar
+      const bubble = document.createElement("div");
+      bubble.classList.add("bubble");
+
+      // Tambahkan nama dan isi komentar ke dalam elemen div
+      bubble.innerHTML = `
+          <p class="comment">${comment.nama}</p>
+          <p>${comment.komentar}</p>
+          <button class="edit-button" onclick="showEditForm('${comment._id}', '${comment.nama}', '${comment.komentar}')">
+      <ion-icon name="pencil"></ion-icon>
+    </button>
+    <button class="delete-button" onclick="deleteComment('${comment._id}')">
+      <ion-icon name="trash"></ion-icon>
+    </button>
+        `;
+
+      // Masukkan elemen komentar ke dalam container
+      container.appendChild(bubble);
+    });
+  }
+
+  async function addNewComment() {
+    const nama = document.getElementById("nama").value;
+    const komentar = document.getElementById("komentar").value;
+
+    try {
+      const response = await fetch("/comments", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ nama, komentar }),
+      });
+
+      if (response.ok) {
+        // Jika komentar berhasil ditambahkan, muat ulang komentar-komentar
+        fetchComments();
+        // Kosongkan input setelah komentar ditambahkan
+        document.getElementById("nama").value = "";
+        document.getElementById("komentar").value = "";
+      } else {
+        throw new Error("Failed to add comment.");
+      }
+    } catch (error) {
+      console.error("Error adding comment:", error);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    fetchComments().catch((error) => {
+      console.error("Error initializing comments:", error);
+    });
+
+    // Tampilkan form input ketika tombol "Add Comment" diklik
+    document.querySelector(".add-comment").addEventListener("click", () => {
+      document.querySelector(".comment-form").style.display = "block";
+    });
+  });
+
+  async function deleteComment(commentId) {
+    try {
+      const response = await fetch(`/comments/${commentId}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        fetchComments(); // Muat ulang komentar setelah hapus
+      } else {
+        throw new Error("Failed to delete comment.");
+      }
+    } catch (error) {
+      console.error("Error deleting comment:", error);
+    }
+  }
+  function showEditForm(commentId, nama, komentar) {
+    document.getElementById("nama").value = nama;
+    document.getElementById("komentar").value = komentar;
+    const submitButton = document.querySelector(".comment-form button[type='button']");
+    submitButton.textContent = "Update";
+    submitButton.onclick = () => updateComment(commentId);
+    document.querySelector(".comment-form").style.display = "block"; // Tampilkan form
+  }
+
+  async function updateComment(commentId) {
+    const nama = document.getElementById("nama").value;
+    const komentar = document.getElementById("komentar").value;
+
+    try {
+      const response = await fetch(`/comments/${commentId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ nama, komentar }),
+      });
+
+      if (response.ok) {
+        fetchComments(); // Muat ulang komentar setelah update
+        // Reset form setelah komentar diperbarui
+        document.getElementById("nama").value = "";
+        document.getElementById("komentar").value = "";
+        const submitButton = document.querySelector(".comment-form button[type='button']");
+        submitButton.textContent = "Submit";
+        submitButton.onclick = addNewComment; // Kembalikan fungsi onclick ke addNewComment
+        document.querySelector(".comment-form").style.display = "none"; // Sembunyikan form setelah selesai update
+      } else {
+        throw new Error("Failed to update comment.");
+      }
+    } catch (error) {
+      console.error("Error updating comment:", error);
+    }
+  }
+</script>

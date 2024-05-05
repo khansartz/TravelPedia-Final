@@ -1,0 +1,118 @@
+<!-- Dibuat oleh Aliyah dan Puspa -->
+<!-- Membuat tampilan website bagian Gallery Page -->
+
+<link rel="stylesheet" href="css/gallery.css">
+
+
+<h2>Share Your Vacation Moments with Us</h2>
+<div class="upload-button">
+  <button onclick="showAddForm()"><ion-icon name="add-circle-sharp"></ion-icon> Add Image</button>
+</div>
+
+<!-- Tambahkan form untuk mengunggah gambar -->
+<div id="addForm" style="display: none">
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" id="imageInput" accept="image/*" />
+    <input type="text" id="titleInput" placeholder="Title" />
+    <input type="text" id="descriptionInput" placeholder="Description" />
+    <button type="button" onclick="uploadImage()">Upload</button>
+    <button type="button" onclick="hideAddForm()">Cancel</button>
+  </form>
+</div>
+
+<div class="isi">
+  <section class="gallery-container">
+    <div class="gallery-item">
+      <img src="/img/bali.jpg" alt="Bali">
+      <div class="overlay">
+        <h3>Bali</h3>
+        <p>Explore the beauty of Bali's beaches and cultural landmarks.</p>
+      </div>
+      <!-- <div class="edit-delete-buttons">
+        <ion-icon name="pencil-sharp" onclick="showAddForm()"></ion-icon>
+        <ion-icon name="trash-sharp" onclick="deleteImage()"></ion-icon>
+      </div> -->
+    </div>
+    <div class="gallery-item">
+      <img src="/img/jogja.jpg" alt="Yogyakarta">
+      <div class="overlay">
+        <h3>Yogyakarta</h3>
+        <p>Discover the rich history and stunning landscapes of Yogyakarta.</p>
+      </div>
+      <!-- <div class="edit-delete-buttons">
+        <ion-icon name="pencil-sharp" onclick="showAddForm()"></ion-icon>
+        <ion-icon name="trash-sharp" onclick="deleteImage()"></ion-icon>
+      </div> -->
+    </div>
+    <div class="gallery-item">
+      <img src="/img/papua.jpg" alt="Papua">
+      <div class="overlay">
+        <h3>Papua</h3>
+        <p>Experience the untouched beauty of Papua's rainforests and islands.</p>
+      </div>
+      <!-- <div class="edit-delete-buttons">
+        <ion-icon name="pencil-sharp" onclick="showAddForm()"></ion-icon>
+        <ion-icon name="trash-sharp" onclick="deleteImage()"></ion-icon>
+      </div> -->
+    </div>
+    <div class="gallery-item">
+      <img src="/img/bromo.jpg" alt="Bromo">
+      <div class="overlay">
+        <h3>Bromo</h3>
+        <p>Witness the surreal landscapes and stunning sunrise at Mount Bromo.</p>
+      </div>
+      <!-- <div class="edit-delete-buttons">
+        <ion-icon name="pencil-sharp" onclick="showAddForm()"></ion-icon>
+        <ion-icon name="trash-sharp" onclick="deleteImage()"></ion-icon>
+      </div> -->
+    </div>
+    <div class="gallery-item">
+      <img src="/img/labuan bajo.jpg" alt="Labuan Bajo">
+      <div class="overlay">
+        <h3>Labuan Bajo</h3>
+        <p>Explore the underwater wonders and pristine beaches of Labuan Bajo.</p>
+      </div>
+      <!-- <div class="edit-delete-buttons">
+        <ion-icon name="pencil-sharp" onclick="showAddForm()"></ion-icon>
+        <ion-icon name="trash-sharp" onclick="deleteImage()"></ion-icon>
+      </div> -->
+    </div>
+    <div class="gallery-item">
+      <img src="/img/bandung.jpg" alt="Bandung">
+      <div class="overlay">
+        <h3>Bandung</h3>
+        <p>Experience the vibrant culture and culinary delights of Bandung.</p>
+      </div>
+      <!-- <div class="edit-delete-buttons">
+        <ion-icon name="pencil-sharp" onclick="showAddForm()"></ion-icon>
+        <ion-icon name="trash-sharp" onclick="deleteImage()"></ion-icon>
+      </div> -->
+    </div>
+    <div class="gallery-item">
+      <img src="/img/gunung lawu.jpg" alt="Gunung Lawu">
+      <div class="overlay">
+        <h3>Gunung Lawu</h3>
+        <p>Embark on a thrilling hike to the summit of Gunung Lawu.</p>
+      </div>
+      <!-- <div class="edit-delete-buttons">
+        <ion-icon name="pencil-sharp" onclick="showAddForm()"></ion-icon>
+        <ion-icon name="trash-sharp" onclick="deleteImage()"></ion-icon>
+      </div> -->
+    </div>
+    <div class="gallery-item">
+      <img src="/img/surabaya.jpg" alt="Surabaya">
+      <div class="overlay">
+        <h3>Surabaya</h3>
+        <p>Experience the bustling city life and historical landmarks of Surabaya.</p>
+      </div>
+      <!-- <div class="edit-delete-buttons">
+        <ion-icon name="pencil-sharp" onclick="showAddForm()"></ion-icon>
+        <ion-icon name="trash-sharp" onclick="deleteImage()"></ion-icon>
+      </div> -->
+    </div>
+  </section>
+</div>
+
+<script src="js/gallery.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
